@@ -31,11 +31,11 @@ public class ProductController {
     public ResponseEntity<List> deleteProduct(@PathVariable long id)
     {
 
-        for(int count = 0; count < products.size(); count++)
+        for(int i = 0; i < products.size(); i++)
         {
-            if(products.get(count).getId() == id)
+            if(products.get(i).getId() == id)
             {
-                products.remove(count);
+                products.remove(i);
             }
         }
         products.remove(id);
