@@ -44,7 +44,7 @@ public class ProductController {
     @PutMapping("/updateProduct/{id}")
     public ResponseEntity<List> updateProduct(@PathVariable int id, @RequestBody Product product)
     {
-        for(int i=0; i < products.size(); i++)
+        for(int i= 0; i < products.size(); i++)
         {
             if(products.get(i).getId() == id)
             {
