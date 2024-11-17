@@ -38,7 +38,6 @@ public class ProductController {
                 products.remove(i);
             }
         }
-        products.remove(id);
         return ResponseEntity.ok(products);
     }
 
