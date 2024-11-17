@@ -10,8 +10,8 @@ import java.util.List;
 public class ProductController {
     private List<Product> products = new ArrayList<>();
     public ProductController() {
-        products.add(new Product("TV", "Made by Sony", 900, 102));
-        products.add(new Product("TV", "Made by LG", 999, 103));
+        products.add(new Product( 1, "TV","Made by Sony", 900));
+        products.add(new Product(2,"TV", "Made by LG", 999));
     }
 
     @GetMapping("/getProduct")
@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/deleteProduct/{id}")
-    public ResponseEntity<List> deleteProduct(@PathVariable long id)
+    public ResponseEntity<List> deleteProduct(@PathVariable int id)
     {
 
         for(int i = 0; i < products.size(); i++)
@@ -41,7 +41,7 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateProduct/{id}")
     public ResponseEntity<List> updateProduct(@PathVariable int id, @RequestBody Product product)
     {
         for(int i=0; i < products.size(); i++)
